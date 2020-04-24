@@ -6,8 +6,8 @@
 
 <br />
 
-<a href="\">English</a>
-<br>
-<a href="\es">Spanish</a>
-<br>
-<a href="\fr">French</a>
+<ng-template ngFor let-lang [ngForOf]="languages">
+  <span *ngIf="lang.code !== localeId">
+    <a href="/{{lang.code}}/">{{lang.label}}</a> </span>
+  <span *ngIf="lang.code === localeId">{{lang.label}} </span>
+</ng-template>
